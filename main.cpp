@@ -32,10 +32,7 @@ int main() {
 
 
     int n, m,i ,j, sum1, sum2,dop;
-    int *X = new int[dop];
-    int *A[]= {new int[n], new int[m]};
-    int *AN[]= {new int[n], new int[m]};
-    ;
+
 
     input_file >> n;
     if(n<2)
@@ -47,23 +44,27 @@ int main() {
     input_file >> m;
     output_file << n << "  numbers of lines" << endl;
     output_file << m<<"  numbers of colomns" << endl;
-    fflush(stdin);
-    fflush(stdout);
 
-    while (!input_file.eof())
+
+   int **A = new int *[n];
+    for(int k=0; k<n; k++)
     {
+        A[k]= new int [m];
+    }
+
+
+        sum1=sum2=0;
        for(i=0; i<n; i++)
        {
            for(j=0; j<m; j++)
            {
                input_file >> A[i][j];
-               if(i<3)
+               if(i<2)
                    sum1+=A[i][j];
-               if(i>n-2)
+               if(i>n-3)
                    sum2+=A[i][j];
            }
        }
-    }
 
     output_file << "\nInputed Matrix" << endl;
     for(i=0; i<n; i++)
@@ -72,13 +73,20 @@ int main() {
         for(j=0; j<m; j++)
         {
         output_file << setw(5) << A[i][j];
+
         }
     }
+    output_file << "\n Summs:"<<endl;
+    output_file << setw(5)<< sum1<<endl;
+    output_file << setw(5) << sum2<< endl;
 
     if(sum1<sum2)
     {
         cout << "Input values which need to sum" << endl;
-        for(i=0; i<m; i++)
+
+        int *X = new int[n];
+
+        for(i=0; i<n; i++)
         {
             input_file >> X[i];
         }
@@ -101,7 +109,7 @@ int main() {
                 output_file << setw(5) << A[i][j];
             }
         }
-
+        delete[] X;
     }
     else
         output_file << "\nsum1 >sum2" << endl;
@@ -109,8 +117,13 @@ int main() {
 
     input_file.close();
     output_file.close();
-    delete[] X;
-  delete[] A;
+
+
+    for(int k=0; k<n; k++)
+    {
+       delete[] A[k];
+    }
+    delete[] A;
     return 0;
 
-}
+};
