@@ -14,6 +14,7 @@ using namespace std;
 
 int main() {
 
+
     int n, m, sum1, sum2;
 
     cout << "Hello, Maaaan!" << endl;
