@@ -21,9 +21,9 @@ void  InAndSum(int* sum1, int* sum2, int n, int m, int **A, ifstream& input_file
         for (int j = 0; j < m; j++) {
             input_file >> A[i][j];
             if (i < 2)
-                sum1 += A[i][j];
+                *sum1 += A[i][j];
             if (i > n - 3)
-                sum2 += A[i][j];
+                *sum2 += A[i][j];
         }
     }
 }
@@ -43,7 +43,7 @@ void InputMatrix(int n, int m, int **A, ofstream& output_file )
     void check(int* sum1, int* sum2, int n, int m, int **A, ifstream& input_file, ofstream& output_file)
     {
 
-        if (sum1 < sum2) {
+        if (*sum1 < *sum2) {
             cout << "Input values which need to sum" << endl;
 
             int *X = new int[n];

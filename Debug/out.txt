@@ -7,7 +7,12 @@ Inputed Matrix
    86   71   66
    98   25  300
    55   65  756
- Summs:     0
-    0
+ Summs:   411
+ 1299
 
-sum1 >sum2
+Changed Matrix 
+
+   41   68  109
+   96   81   76
+  108   35  310
+   65   75  766
