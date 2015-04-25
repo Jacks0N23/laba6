@@ -16,7 +16,7 @@ using namespace std;
 
 
 
-int  InAndSum(int sum1, int sum2, int n, int m, int **A, ifstream& input_file) {
+void  InAndSum(int* sum1, int* sum2, int n, int m, int **A, ifstream& input_file) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             input_file >> A[i][j];
@@ -26,7 +26,6 @@ int  InAndSum(int sum1, int sum2, int n, int m, int **A, ifstream& input_file) {
                 sum2 += A[i][j];
         }
     }
-    return sum1,sum2;
 }
 
 void InputMatrix(int n, int m, int **A, ofstream& output_file )
@@ -41,7 +40,7 @@ void InputMatrix(int n, int m, int **A, ofstream& output_file )
         }
     }
 }
-    void check(int sum1, int sum2, int n, int m, int **A, ifstream& input_file, ofstream& output_file)
+    void check(int* sum1, int* sum2, int n, int m, int **A, ifstream& input_file, ofstream& output_file)
     {
 
         if (sum1 < sum2) {
@@ -70,7 +69,7 @@ void InputMatrix(int n, int m, int **A, ofstream& output_file )
             delete[] X;
         }
         else
-            output_file << "\nsum1 >sum2" << endl;
+            output_file << "\nsum1 >sum2 " << endl;
     }
 
 
