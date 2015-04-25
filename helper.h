@@ -13,11 +13,10 @@
 
 
 using namespace std;
-ifstream input_file;
-ofstream output_file;
 
-void Sum(int sum1, int sum2, int n, int m, int **A) {
 
+
+int  InAndSum(int sum1, int sum2, int n, int m, int **A, ifstream& input_file) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             input_file >> A[i][j];
@@ -27,9 +26,11 @@ void Sum(int sum1, int sum2, int n, int m, int **A) {
                 sum2 += A[i][j];
         }
     }
+    return sum1,sum2;
 }
 
-int InputedMatrix(int sum1, int sum2, int n, int m, int **A ) {
+void InputMatrix(int n, int m, int **A, ofstream& output_file )
+{
 
     output_file << "\nInputed Matrix" << endl;
     for (int i = 0; i < n; i++) {
@@ -39,13 +40,9 @@ int InputedMatrix(int sum1, int sum2, int n, int m, int **A ) {
 
         }
     }
-
-
-    output_file << "\n Summs:" << endl;
-    output_file << setw(5) << sum1 << endl;
-    output_file << setw(5) << sum2 << endl;
 }
-    void proverka(int sum1, int sum2, int n, int m, int **A) {
+    void check(int sum1, int sum2, int n, int m, int **A, ifstream& input_file, ofstream& output_file)
+    {
 
         if (sum1 < sum2) {
             cout << "Input values which need to sum" << endl;

@@ -47,11 +47,11 @@ int main() {
         A[k] = new int[m];
     }
 
-
-sum1 = sum2 = 0;
-Sum(sum1,sum2,n,m, (int **) **A);
-InputedMatrix(sum1,sum2,n,m, (int **) **A);
-proverka(sum1,sum2,n,m, (int **) **A);
+sum1=sum2=0;
+InAndSum(sum1,sum2,n,m, A, input_file);
+InputMatrix(n,m, A, output_file);
+output_file << "\n Summs: " << setw(5) << sum1 <<"\n"<< setw(5) << sum2 << endl;
+check(sum1,sum2,n,m, A,input_file,output_file);
 
     input_file.close();
     output_file.close();

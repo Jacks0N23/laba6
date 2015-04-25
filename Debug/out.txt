@@ -1,2 +1,13 @@
 4  numbers of lines
 3  numbers of colomns
+
+Inputed Matrix
+
+   31   58   99
+   86   71   66
+   98   25  300
+   55   65  756
+ Summs:     0
+    0
+
+sum1 >sum2
